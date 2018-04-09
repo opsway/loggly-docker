@@ -1,5 +1,5 @@
 FROM alpine:3.6
-LABEL maintainer="Jonathan Short <jonathan.short@sendgrid.com>"
+LABEL maintainer="Eugene Brodsky <eugene@teknogenik.com>"
 
 RUN rm -rf /var/cache/apk/* && apk update && \
     apk add --update rsyslog rsyslog-tls && \
