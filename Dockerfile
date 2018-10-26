@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine:3.8
 LABEL maintainer="OpsWay <support@opsway.com>"
 
 RUN rm -rf /var/cache/apk/* && apk update && \
