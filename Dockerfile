@@ -1,4 +1,4 @@
-FROM alpine:3.9
+FROM alpine:edge
 LABEL maintainer="OpsWay <support@opsway.com>"
 
 RUN rm -rf /var/cache/apk/* && apk update && \
@@ -12,5 +12,6 @@ ADD loggly.crt /etc/rsyslog.d/keys/ca.d/
 
 EXPOSE 514
 EXPOSE 514/udp
+EXPOSE 514/tcp
 
 CMD ["/tmp/run.sh"]
