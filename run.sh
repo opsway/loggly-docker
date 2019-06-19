@@ -37,6 +37,13 @@ LOGGLY_TAG=$(echo "$LOGGLY_TAG" | sed 's/:/\\\\" tag=\\\\"/g')
 sed -i "s/LOGGLY_AUTH_TOKEN/$LOGGLY_AUTH_TOKEN/" /etc/rsyslog.conf
 sed -i "s/LOGGLY_TAG/$LOGGLY_TAG/" /etc/rsyslog.conf
 
+# Enable debug mode for rsyslogd ( run 'rsyslogd -d' )
+if [ "$LOGGLY_RSYSLOG_DEBUG" = true ]; then
+  debug_param="-d"
+else
+  debug_param=""
+fi
+
 # Run RSyslog daemon
-exec /usr/sbin/rsyslogd -n
+exec /usr/sbin/rsyslogd -n $debug_param
 

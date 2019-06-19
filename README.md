@@ -6,5 +6,5 @@ Docker container for loggly (via rsyslog). Check out Loggly's [Docker logging do
 Usage:
 
 ```
-docker run -e LOGGLY_AUTH_TOKEN=[Loggly Customer Token] -e LOGGLY_TAG=[Tag Describing Source] [ -e LOGGLY_DEBUG=true ] sendgridlabs/loggly-docker
+docker run -e LOGGLY_AUTH_TOKEN=[Loggly Customer Token] -e LOGGLY_TAG=[Tag Describing Source] [ -e LOGGLY_DEBUG=true ] [ -e LOGGLY_RSYSLOG_DEBUG=true ] sendgridlabs/loggly-docker
 ```
